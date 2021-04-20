@@ -1,0 +1,9 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>My Awesome Dev Skills</h1>
+
+<% skills.forEach((skill)=>{ %>
+<a href="/skills/<%= skill.id %>">
+  <li><%= skill.name %></li>
+</a>
+<% }); %> <%- include('../partials/foot.ejs') %>
