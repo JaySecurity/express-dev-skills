@@ -5,4 +5,18 @@ body {
 a {
   color: #00B7FF; }
 
+.add-lnk {
+  margin: 10px 0 0 20px; }
+  .add-lnk:hover {
+    color: darkblue; }
+
+ul {
+  margin: 10px 0; }
+
+form {
+  display: inline-block; }
+  form button {
+    margin: 10px;
+    padding: 5px; }
+
 /*# sourceMappingURL=style.css.map */

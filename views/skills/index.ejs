@@ -1,12 +1,13 @@
 <%- include('../partials/head.ejs') %>
 
 <h1>My Awesome Dev Skills</h1>
+<ul>
+  <% skills.forEach((skill)=>{ %>
+  <a href="/skills/<%= skill.id %>">
+    <li><%= skill.name %></li>
+  </a>
 
-<% skills.forEach((skill)=>{ %>
-<a href="/skills/<%= skill.id %>">
-  <li><%= skill.name %></li>
-</a>
-
-<% }); %>
-<a href="/skills/add">Add Skill...</a>
+  <% }); %>
+</ul>
+<a class="add-lnk" href="/skills/add">Add Skill...</a>
 <%- include('../partials/foot.ejs') %>

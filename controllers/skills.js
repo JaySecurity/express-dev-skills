@@ -1,4 +1,5 @@
 const Skill = require('../models/skill');
+const { v4: uuidv4 } = require('uuid');
 
 function getAllSkills(req, res) {
   res.render('skills/index', { skills: Skill.getAll() });
@@ -14,7 +15,7 @@ function addSkill(req, res) {
 
 function create(req, res) {
   const newSkill = {
-    id: Skill.getAll().length,
+    id: uuidv4(),
     name: req.body.name,
     level: req.body.level,
   };
@@ -22,4 +23,31 @@ function create(req, res) {
   res.redirect('/skills');
 }
 
-module.exports = { getAllSkills, getSkill, addSkill, create };
+function getEditSkill(req, res) {
+  res.render('skills/editSkill', { skill: Skill.getOne(req.params.id) });
+}
+
+function update(req, res) {
+  const updatedSkill = {
+    id: req.params.id,
+    name: req.body.name,
+    level: req.body.level,
+  };
+  Skill.update(updatedSkill);
+  res.redirect(`/skills/${req.params.id}`);
+}
+
+function deleteSkill(req, res) {
+  Skill.deleteSkill(req.params.id);
+  res.redirect('/skills');
+}
+
+module.exports = {
+  getAllSkills,
+  getSkill,
+  addSkill,
+  create,
+  getEditSkill,
+  update,
+  deleteSkill,
+};
