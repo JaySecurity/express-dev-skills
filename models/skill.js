@@ -15,7 +15,12 @@ function getOne(id) {
   return skill[0];
 }
 
+function addSkill(skill) {
+  skills.push(skill);
+}
+
 module.exports = {
   getAll,
   getOne,
+  addSkill,
 };

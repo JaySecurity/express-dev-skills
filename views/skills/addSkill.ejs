@@ -1,0 +1,24 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>Add a new skill</h1>
+<form action="/skills" method="post">
+  <input
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Add a Skill"
+    ,
+    autocomplete="off"
+  />
+  <input
+    type="text"
+    name="level"
+    id="level"
+    placeholder="Enter Skill Level"
+    ,
+    autocomplete="off"
+  />
+  <button type="submit">Add Skill</button>
+</form>
+
+<%- include('../partials/foot.ejs') %>
